@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lady Becca Ltd. | Premium Logistics & Hospitality in Ghana</title>
     
+    <!-- FAVICON: Simple SVG favicon with initials "LB" -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23ff5722'/><text x='50%' y='50%' dominant-baseline='central' text-anchor='middle' font-size='50' font-weight='bold' fill='%23ffffff' font-family='Poppins, sans-serif'>LB</text></svg>">
+    <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23ff5722'/><text x='50%' y='50%' dominant-baseline='central' text-anchor='middle' font-size='50' font-weight='bold' fill='%23ffffff' font-family='Poppins, sans-serif'>LB</text></svg>">
+    <!-- END FAVICON -->
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
@@ -409,9 +414,9 @@
             // Loop through all gallery images and add a click listener
             galleryImages.forEach(img => {
                 img.addEventListener('click', function() {
-                    modal.style.display = "block";      // Show the modal
-                    modalImg.src = this.src;         // Set the modal image source
-                    captionText.innerHTML = this.alt;  // Set the caption from the image's alt text
+                    modal.style.display = "block";    // Show the modal
+                    modalImg.src = this.src;      // Set the modal image source
+                    captionText.innerHTML = this.alt; // Set the caption from the image's alt text
                 });
             });
 
@@ -432,4 +437,3 @@
     </SCript>
     </body>
 </html>
-
