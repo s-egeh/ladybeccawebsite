@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Lady Becca Ltd.</title>
+    
+    <!-- Google Fonts - Updated to Poppins & Lato -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Your Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Custom styles for the Services page for added animations and layout -->
+    <style>
+        /* A simple hero section for the services page */
+        .services-hero {
+            padding: 200px 5% 120px;
+            background: linear-gradient(rgba(10, 37, 64, 0.7), rgba(10, 37, 64, 0.7)), url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c2VydmljZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=500') no-repeat center center;
+            background-size: cover;
+            text-align: center;
+            color: white;
+        }
+
+        .services-hero h1 {
+            color: white;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            animation: slideInUp 1s forwards;
+        }
+
+        .services-hero p {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            max-width: 800px;
+            margin: 20px auto 0;
+            animation: slideInUp 1s forwards 0.3s;
+        }
+        
+        /* Detailed service section styling */
+        .service-detail-section {
+            padding: 100px 5%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        /* Alternate layout for every other section */
+        .service-detail-section:nth-child(even) {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .service-detail-section:nth-child(even) .service-image {
+            order: 2;
+        }
+
+        .service-image img {
+            width: 100%;
+            height: auto;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow-heavy);
+        }
+
+        .service-content h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 20px;
+        }
+
+        .service-content .subtitle {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--text-color-light);
+            margin-bottom: 30px;
+        }
+
+        .service-features, .service-benefits {
+            margin: 30px 0;
+            padding-left: 20px;
+        }
+
+        .service-features li, .service-benefits li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+            list-style: none;
+        }
+
+        .service-features li::before {
+            content: '\f00c'; /* Font Awesome check icon */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--success-color);
+            position: absolute;
+            left: 0;
+            top: 5px;
+        }
+        
+        /* Simple process visualization */
+        .process-section {
+            background-color: var(--secondary-color);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .process-step {
+            padding: 30px;
+        }
+
+        .process-step .step-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--accent-color);
+            line-height: 1;
+        }
+
+        .process-step h4 {
+            margin: 15px 0;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .service-detail-section,
+            .service-detail-section:nth-child(even) {
+                grid-template-columns: 1fr;
+            }
+            .service-detail-section:nth-child(even) .service-image {
+                order: 0; /* Stack image on top on mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Preloader Element -->
+    <div class="preloader">
+        <div class="preloader-icon"></div>
+    </div>
+
+    <header>
+        <div class="logo">Lady Becca Ltd.</div>
+        <nav class="tab-container">
+            <!-- Navigation links updated to point to different pages -->
+            <a href="index.html" class="tab" data-tab="home">
+                <i class="fa fa-home"></i><span>Home</span>
+            </a>
+            <a href="services.html" class="tab active" data-tab="services">
+                <i class="fa fa-cogs"></i><span>Services</span>
+            </a>
+            <a href="about.html" class="tab" data-tab="about">
+                <i class="fa fa-user"></i><span>About</span>
+            </a>
+            <a href="contact.html" class="tab" data-tab="contact">
+                <i class="fa fa-envelope"></i><span>Contact</span>
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- A specific hero section for the services page, replacing the 3D cube -->
+        <section class="services-hero">
+            <h1>Our Integrated Solutions</h1>
+            <p>Discover how Lady Becca Ltd. combines expertise in logistics and hospitality to provide a seamless, reliable, and premium experience for every client.</p>
+        </section>
+
+        <!-- Service 1: Transportation Logistics -->
+        <section class="service-detail-section reveal">
+            <div class="service-content">
+                <h2>Transportation Logistics</h2>
+                <p class="subtitle">Tired of shipping delays and unreliable carriers damaging your bottom line? We provide the structural integrity your supply chain needs.</p>
+                <p>At Lady Becca Ltd., we understand that timely and safe delivery is the backbone of your business. We address the core challenges of logistics in Ghana—from navigating complex routes to ensuring cargo safety—with precision-planned solutions that you can trust.</p>
+                
+                <h4>Key Features & Benefits:</h4>
+                <ul class="service-features">
+                    <li><strong>Real-Time Tracking:</strong> Gain peace of mind knowing exactly where your shipment is at all times.</li>
+                    <li><strong>Secure Warehousing:</strong> Benefit from our safe, modern facilities that protect your goods before the final delivery.</li>
+                    <li><strong>Customs Brokerage:</strong> Save time and avoid costly fines with our expert handling of all customs documentation and clearance.</li>
+                    <li><strong>Dedicated Fleet:</strong> Your cargo is handled by our professional team and well-maintained vehicles, reducing risk and ensuring reliability.</li>
+                </ul>
+                <a href="contact.html" class="btn">Get a Logistics Quote</a>
+            </div>
+            <div class="service-image reveal">
+                <img src="https://images.unsplash.com/photo-1741655262435-4890ab9918fa?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1076" alt="Team managing logistics in a warehouse">
+            </div>
+        </section>
+
+        <!-- Service 2: Premium Airbnb Stays -->
+        <section class="service-detail-section reveal">
+            <div class="service-image reveal">
+                <img src="lady1.avif" alt="Interior of a luxury modern apartment">
+            </div>
+            <div class="service-content">
+                <h2>Premium Airbnb Stays</h2>
+                <p class="subtitle">Struggling to find high-quality, reliable accommodation that feels like home? Your search ends here.</p>
+                <p>Whether you're traveling for business or leisure, finding the right place to stay is crucial for a successful trip. We eliminate the uncertainty by offering a curated selection of premium properties that meet the highest standards of cleanliness, comfort, and style, complete with the amenities you need to relax and be productive.</p>
+
+                <h4>What You Can Expect:</h4>
+                <ul class="service-features">
+                    <li><strong>Professionally Cleaned Spaces:</strong> Arrive with confidence knowing your rental is sanitized and sparkling clean.</li>
+                    <li><strong>High-Speed Wi-Fi:</strong> Stay connected for work or streaming with fast and reliable internet access.</li>
+                    <li><strong>24/7 Concierge Support:</strong> Enjoy the benefit of our local expertise and round-the-clock support for any questions or needs.</li>
+                    <li><strong>Prime Locations:</strong> Our properties are conveniently located in safe, accessible neighborhoods across Accra and Tema.</li>
+                </ul>
+                <a href="https://www.airbnb.com/rooms/883253965577895320?guests=1&adults=1&s=67&unique_share_id=bef80687-15eb-4094-bfa2-d2e2b4d0710d" class="btn">Explore Properties</a>
+            </div>
+        </section>
+        
+        <!-- Service 3: Executive Car Rentals -->
+        <section class="service-detail-section reveal">
+            <div class="service-content">
+                <h2>Executive Car Rentals</h2>
+                <p class="subtitle">Need a reliable and stylish transportation solution without the hassles of ownership or unpredictable ride-sharing apps?</p>
+                <p>Navigate Ghana in comfort and class. Our executive car rental service is the perfect solution for airport transfers, corporate travel, or special events. We provide a fleet of modern, meticulously maintained vehicles and professional drivers to ensure your journey is safe, punctual, and comfortable.</p>
+
+                <h4>Service Inclusions:</h4>
+                <ul class="service-features">
+                    <li><strong>Professional Chauffeurs:</strong> Travel with peace of mind with our vetted, experienced, and courteous drivers.</li>
+                    <li><strong>Immaculate Fleet:</strong> Choose from a range of clean, modern sedans and SUVs to fit your needs.</li>
+                    <li><strong>Flexible Booking:</strong> We offer hourly, daily, and weekly rental options to provide the best value for your schedule.</li>
+                    <li><strong>Punctuality Guaranteed:</strong> Your time is valuable. We pride ourselves on on-time pickups and drop-offs, every time.</li>
+                </ul>
+                <a href="contact.html" class="btn">Book Your Ride</a>
+            </div>
+            <div class="service-image reveal">
+                <img src="https://images.unsplash.com/photo-1729216254881-76ca8a63b987?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1169" alt="Professional chauffeur opening a luxury car door">
+            </div>
+        </section>
+        
+        <!-- Our Process Section -->
+        <section class="content-section process-section reveal">
+            <h2 class="section-title">Our Simple Process</h2>
+            <div class="process-steps">
+                <div class="process-step reveal">
+                    <div class="step-number">01</div>
+                    <h4>Consultation</h4>
+                    <p>Contact us with your needs, and we'll provide a clear, detailed proposal and quote with no hidden fees.</p>
+                </div>
+                <div class="process-step reveal">
+                    <div class="step-number">02</div>
+                    <h4>Planning & Booking</h4>
+                    <p>Once you approve, we handle all the logistics, from scheduling drivers to preparing your accommodation.</p>
+                </div>
+                <div class="process-step reveal">
+                    <div class="step-number">03</div>
+                    <h4>Service Delivery</h4>
+                    <p>We execute the plan flawlessly, keeping you informed every step of the way with clear communication.</p>
+                </div>
+                <div class="process-step reveal">
+                    <div class="step-number">04</div>
+                    <h4>Support & Follow-Up</h4>
+                    <p>Our commitment doesn't end when the job is done. We're available 24/7 for support and ensure you're fully satisfied.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ========== Call-to-Action Section ========== -->
+        <section class="cta-section">
+            <h2>Ready for a Seamless Experience?</h2>
+            <p>Let's build a lasting partnership. Contact us today for a personalized quote or book your next stay with confidence.</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn btn-primary">Get a Logistics Quote</a>
+                <a href="https://www.airbnb.com/rooms/883253965577895320?guests=1&adults=1&s=67&unique_share_id=bef80687-15eb-4094-bfa2-d2e2b4d0710d" class="btn btn-secondary">Book a Stay</a>
+            </div>
+        </section>
+    </main>
+    
+    <!-- ========== Footer ========== -->
+    <footer>
+        <div class="footer-content">
+            <div class="logo">Lady Becca Company Limited </div>
+            <p>Your trusted partner in logistics and hospitality, based in Tema, Ghana.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 ladybecca.com. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button and Theme Switcher -->
+    <button id="back-to-top" aria-label="Back to Top"><i class="fas fa-arrow-up"></i></button>
+    <div class="theme-switcher" aria-label="Toggle Dark Mode">
+        <div class="slider"></div>
+    </div>
+
+    <!-- Your JavaScript file for interactivity -->
+    <script src="script.js"></script>
+</body>
+</html>

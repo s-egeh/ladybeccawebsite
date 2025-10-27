@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Lady Becca Ltd.</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Your Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Custom styles for the Contact page -->
+    <style>
+        .contact-hero {
+            padding: 200px 5% 120px;
+            background: linear-gradient(rgba(10, 37, 64, 0.85), rgba(10, 37, 64, 0.85)), url('https://images.unsplash.com/photo-1587560699334-cc426240169f?q=80&w=2070') no-repeat center center;
+            background-size: cover;
+            text-align: center;
+            color: white;
+        }
+
+        .contact-hero h1 {
+            color: white;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            animation: slideInUp 1s forwards;
+        }
+
+        .contact-hero p {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            max-width: 800px;
+            margin: 20px auto 0;
+            animation: slideInUp 1s forwards 0.3s;
+        }
+
+        .contact-main-section {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 60px;
+            align-items: flex-start;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 100px 5%;
+        }
+
+        .contact-details-wrapper {
+            text-align: left;
+        }
+
+        .contact-details-wrapper h2 {
+            margin-bottom: 30px;
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+
+        .contact-info-item i {
+            font-size: 24px;
+            color: var(--accent-color);
+            width: 50px;
+            text-align: center;
+        }
+        
+        .map-container {
+            width: 100%;
+            height: 350px;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--box-shadow-heavy);
+            margin-top: 40px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .faq.content-section {
+             background-color: var(--secondary-color);
+        }
+
+        @media (max-width: 992px) {
+            .contact-main-section {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Preloader Element -->
+    <div class="preloader">
+        <div class="preloader-icon"></div>
+    
+    </div>
+
+    <header>
+        <div class="logo">Lady Becca Ltd.</div>
+        <nav class="tab-container">
+            <a href="index.html" class="tab" data-tab="home">
+                <i class="fa fa-home"></i><span>Home</span>
+            </a>
+            <a href="services.html" class="tab" data-tab="services">
+                <i class="fa fa-cogs"></i><span>Services</span>
+            </a>
+            <a href="about.html" class="tab" data-tab="about">
+                <i class="fa fa-user"></i><span>About</span>
+            </a>
+            <a href="contact.html" class="tab active" data-tab="contact">
+                <i class="fa fa-envelope"></i><span>Contact</span>
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-hero">
+            <h1>Let's Start a Conversation</h1>
+            <p>We're here to answer your questions, provide quotes, and help you get started. Reach out to us today—we look forward to hearing from you.</p>
+        </section>
+
+        <section class="contact-main-section">
+            <div class="contact-details-wrapper reveal">
+                <h2 class="section-title" style="text-align: left; display: block;">Contact Information</h2>
+                <p>Have a question or need a custom quote? Fill out the form or use the contact details below. Our team is ready to assist you.</p>
+                <div class="contact-info-list">
+                    <div class="contact-info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Tema, Greater Accra Region, Ghana</span>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:ladybecca@auntienkranpartners.com">ladybecca@auntienkranpartners.com</a>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>+233 (XX) XXX XXXX </span>
+                    </div>
+                     <div class="contact-info-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Mon - Fri: 9:00 AM - 6:00 PM GMT</span>
+                    </div>
+                </div>
+                <div class="map-container">
+                    
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63531.91899162157!2d-0.0245238!3d5.66013695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf8a4b45a8647f%3A0x356828568b20c2d1!2sTema%2C%20Ghana!5e0!3m2!1sen!2sus!4v1672878982845!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+            <div class="contact-form-wrapper reveal">
+                 <form action="mailto:ladybecca@auntienkranpartners.com" method="post" enctype="text/plain" class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                         <input type="text" id="subject" name="subject" placeholder="Subject (e.g., Logistics Quote, Booking Inquiry)" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Please provide as much detail as possible (e.g., cargo type, destination, desired dates, etc.)" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Email</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Re-using the FAQ section for contact-specific questions -->
+        <section class="content-section faq reveal">
+            <h2 class="section-title">Quick Answers</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">What's the best way to get a fast quote?</button>
+                    <div class="faq-answer">
+                        <p>For the fastest and most accurate quote, please use the contact form on this page and include details such as the type of service you need, key dates, destinations (for logistics), and number of guests (for hospitality).</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">How long does it typically take to get a response?</button>
+                    <div class="faq-answer">
+                        <p>We pride ourselves on our responsiveness. You can expect to hear back from a member of our team within one business day (24 hours) of your inquiry.</p>
+                    </div>
+                </div>
+                 <div class="faq-item">
+                    <button class="faq-question">Do you handle urgent or last-minute requests?</button>
+                    <div class="faq-answer">
+                        <p>Yes, we do our best to accommodate urgent requests based on availability. For time-sensitive matters, we recommend calling us directly after submitting your form.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="logo">Lady Becca Company Limited</div>
+            <p>Your trusted partner in logistics and hospitality, based in Tema, Ghana.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 LadyBecca.com. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <button id="back-to-top" aria-label="Back to Top"><i class="fas fa-arrow-up"></i></button>
+    <div class="theme-switcher" aria-label="Toggle Dark Mode">
+        <div class="slider"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lady Becca Ltd. | Premium Logistics & Hospitality in Ghana</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Styles for new Hero buttons */
+        .btn-hero {
+            background-color: var(--primary-color, #ff5722);
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: var(--border-radius-sm, 5px);
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            margin-top: 15px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .btn-hero:hover {
+            background-color: transparent;
+            border-color: var(--primary-color, #ff5722);
+            color: var(--primary-color, #ff5722);
+            transform: translateY(-2px);
+        }
+        
+        /* Styles for new Gallery CTA button container */
+        .gallery-cta {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        /* Styles for SURPRISE Lightbox Modal */
+        .gallery-item img {
+            cursor: pointer; /* Show users the images are clickable */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .gallery-item img:hover {
+            transform: scale(1.03); /* Slight zoom on hover */
+            box-shadow: var(--box-shadow-heavy, 0 10px 20px rgba(0,0,0,0.2));
+        }
+
+        .lightbox-modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1000; /* Sit on top */
+            padding-top: 60px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+            animation: fadeIn 0.5s;
+        }
+
+        .lightbox-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            animation: zoomIn 0.5s;
+        }
+
+        #lightbox-caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: #ccc;
+            padding: 10px 0;
+            height: 150px;
+            font-size: 1.1rem;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .lightbox-close:hover,
+        .lightbox-close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Animation Keyframes */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes zoomIn {
+            from { transform: scale(0.8); }
+            to { transform: scale(1); }
+        }
+    </style>
+    </head>
+<body>
+
+    <div class="preloader">
+        <div class="preloader-icon"></div>
+    </div>
+
+    <header>
+        <div class="logo">Lady Becca Ltd.</div>
+        <nav class="tab-container">
+            <a href="index.html" class="tab active" data-tab="home">
+                <i class="fa fa-home"></i><span>Home</span>
+            </a>
+            <a href="services.html" class="tab" data-tab="services">
+                <i class="fa fa-cogs"></i><span>Services</span>
+            </a>
+            <a href="about.html" class="tab" data-tab="about">
+                <i class="fa fa-user"></i><span>About</span>
+            </a>
+            <a href="contact.html" class="tab" data-tab="contact">
+                <i class="fa fa-envelope"></i><span>Contact</span>
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="scene">
+                <div class="cube-rotator">
+                    <div class="cube">
+                        <div class="cube-face cube-face-front">
+                            <img src="https://images.unsplash.com/photo-1759826350352-c5b0b77729bd?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170" alt="Global Logistics Network">
+                            <div class="hero-text">
+                                <h1 class="color-split">Seamless Logistics</h1>
+                                <p>Connecting Your World, On Time, Every Time.</p>
+                                <!-- <a href="services.html" class="btn btn-hero">Explore Our Services</a> --> <!-- Button Removed -->
+                            </div>
+                        </div>
+                        <div class="cube-face cube-face-right">
+                            <img src="https://images.unsplash.com/photo-1548701385-afb716bc2acb?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687" alt="Luxury Airbnb Stay">
+                            <div class="hero-text">
+                                <h1 class="color-split">Exquisite Stays</h1>
+                                <p>Your Ultimate Home Away From Home.</p>
+                                <!-- <a href="services.html" class="btn btn-hero">Explore Our Services</a> --> <!-- Button Removed -->
+                            </div>
+                        </div>
+                        <div class="cube-face cube-face-back">
+                            <img src="https://images.unsplash.com/photo-1662135426498-72a27149a7dd?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170" alt="Reliable Transportation">
+                            <div class="hero-text">
+                                <h1 class="color-split">Reliable Transport</h1>
+                                <p>Getting You There Safely and in Style.</p>
+                                <!-- <a href="services.html" class="btn btn-hero">Explore Our Services</a> --> <!-- Button Removed -->
+                            </div>
+                        </div>
+                        <div class="cube-face cube-face-left">
+                            <img src="https://images.unsplash.com/photo-1556745753-b2904692b3cd?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1073" alt="Premium Customer Service">
+                            <div class="hero-text">
+                                <h1 class="color-split">Premium Service</h1>
+                                <p>Excellence in Every Single Interaction.</p>
+                                <!-- <a href="services.html" class="btn btn-hero">Explore Our Services</a> --> <!-- Button Removed -->
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+            <div class="particles"></div>
+        </section>
+
+        <section id="services" class="content-section services reveal">
+            <h2 class="section-title">Our Core Services</h2>
+            <div class="services-container">
+                <div class="service-card reveal">
+                    <i class="fas fa-truck-fast"></i>
+                    <h3>Transportation Logistics</h3>
+                    <p>Reliable, efficient, and secure logistics solutions tailored to your business needs. From local delivery to global freight, we ensure your goods arrive on time, every time.</p>
+                    <a href="#contact" class="btn">Request a Quote</a>
+                </div>
+                <div class="service-card reveal">
+                    <i class="fas fa-house-user"></i>
+                    <h3>Premium Airbnb Stays</h3>
+                    <p>Discover our collection of curated properties for your comfort and convenience. Perfect for business travel or leisure, enjoy a seamless stay with premium amenities.</p>
+                    <a href="#gallery" class="btn">Explore Properties</a>
+                </div>
+                <div class="service-card reveal">
+                    <i class="fas fa-car-side"></i>
+                    <h3>Executive Car Rentals</h3>
+                    <p>Travel in comfort and style with our fleet of modern, well-maintained vehicles. Ideal for airport transfers, corporate travel, and special occasions across Ghana.</p>
+                    <a href="#contact" class="btn">Book a Vehicle</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="featured-property" class="content-section features reveal">
+            <h2 class="section-title">Featured Property</h2>
+            <p style="max-width: 700px; margin: -40px auto 40px auto; color: var(--text-color-light);">
+                Experience the best of Adentan with our top-rated rental unit. Perfect for solo travelers or couples, this stylish space offers comfort, convenience, and a touch of luxury.
+            </p>
+            <div class="airbnb-embed-frame" data-id="883253965577895320" data-view="home" data-hide-price="true" style="width: 100%; max-width: 800px; height: 450px; margin: auto; border-radius: var(--border-radius-lg); overflow: hidden; box-shadow: var(--box-shadow-heavy);">
+                <a href="https://www.airbnb.com/rooms/883253965577895320?check_in=2025-11-21&amp;check_out=2025-11-23&amp;guests=1&amp;adults=1&amp;s=66&amp;source=embed_widget">View On Airbnb</a>
+                <a href="https://www.airbnb.com/rooms/883253965577895320?check_in=2025-11-21&amp;check_out=2025-11-23&amp;guests=1&amp;adults=1&amp;s=66&amp;source=embed_widget" rel="nofollow">Rental unit in Adentan · ★4.85 · 1 bedroom · 1 bed · 1 bath</a>
+                <script async="" src="https://www.airbnb.com/embeddable/airbnb_jssdk"></script>
+            </div>
+        </section>
+
+
+        <section class="content-section features reveal">
+            <h2 class="section-title">Why Choose Lady Becca?</h2>
+            <div class="features-container">
+                <div class="feature-item reveal">
+                    <i class="fas fa-shield-halved"></i>
+                    <h4>Reliability & Trust</h4>
+                    <p>Your peace of mind is our top priority. We are committed to dependable service and transparent communication.</p>
+                </div>
+                <div class="feature-item reveal">
+                    <i class="fas fa-headset"></i>
+                    <h4>24/7 Support</h4>
+                    <p>Our dedicated team is available around the clock to assist you with any inquiries, bookings, or support needs.</p>
+                </div>
+                <div class="feature-item reveal">
+                    <i class="fas fa-gem"></i>
+                    <h4>Quality & Comfort</h4>
+                    <p>We guarantee a high standard of quality in both our logistics and hospitality services, ensuring a premium experience.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="about" class="content-section vision-mission reveal">
+            <h2 class="section-title">Our Guiding Principles</h2>
+            <div class="vision-mission-container">
+                <div class="principle-card reveal">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Our Mission</h3>
+                    <p>To provide exceptionally reliable and seamless logistics and hospitality services, creating unparalleled value and peace of mind for every client through innovation and a commitment to excellence.</p>
+                </div>
+                <div class="principle-card reveal">
+                    <i class="fas fa-eye"></i>
+                    <h3>Our Vision</h3>
+                    <p>To be the most trusted and sought-after partner in Ghana for integrated logistics and premium accommodation, renowned for our quality, integrity, and customer-centric approach.</p>
+                </div>
+                <div class="principle-card reveal">
+                    <i class="fas fa-check-double"></i>
+                    <h3>Core Objectives</h3>
+                    <p>To maintain the highest standards of safety, deliver on our promises with punctuality, and continuously innovate our services to exceed client expectations in every interaction.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section testimonial-section reveal">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <div class="testimonial-container">
+                <div class="testimonial-slide active">
+                    
+                    <p class="testimonial-text">"Lady Becca's logistics team is second to none. They handled our sensitive cargo with utmost professionalism. Deliveries were always on schedule. Highly recommended for any business in Accra."</p>
+                    <p class="testimonial-author">Kwame Asante<span>Executive of a Distribution Company</span></p>
+                </div>
+                <div class="testimonial-slide">
+                    <p class="testimonial-text">"I stayed at one of their properties in Tema for a business trip, and it was exceptional. Clean, modern, and with all the amenities I needed. It truly felt like a home away from home."</p>
+                    <p class="testimonial-author">Ama Johnson<span>International Consultant</span></p>
+                </div>
+                <div class="testimonial-slide">
+                    <p class="testimonial-text">"The car rental service was a lifesaver. The vehicle was pristine, and the driver was professional and punctual. It made navigating my meetings across the city completely stress-free."</p>
+                    <p class="testimonial-author">David Miller<span>Project Manager</span></p>
+                </div>
+                <div class="testimonial-nav">
+                    <button id="prev-slide" aria-label="Previous Testimonial"><i class="fas fa-chevron-left"></i></button>
+                    <button id="next-slide" aria-label="Next Testimonial"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+        <section id="gallery" class="content-section gallery reveal">
+            <h2 class="section-title">Our Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="lady3.avif" alt="Modern Exterior Design"></div>
+                <div class="gallery-item"><img src="lady1.avif" alt="Stylish and modern living room interior"></div>
+                <div class="gallery-item"><img src="ladykit5.avif" alt="Standard well furbished kitchen"></div>
+                <div class="gallery-item"><img src="lady2.avif" alt="Cozy and well-lit bedroom interior"></div>
+                <div class="gallery-item"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6ODgzMjUzOTY1NTc3ODk1MzIw/original/a92f8d3a-774a-4233-8b4f-f819a9662d4f.jpeg?im_w=720" alt="Relaxing & Welcoming Living Room"></div>
+                <div class="gallery-item"><img src="lady4.avif" alt="Spacious Environment"></div>
+            </div>
+
+            <div class="gallery-cta">
+                <a href="https://www.airbnb.com/rooms/883253965577895320?guests=1&adults=1&s=67&unique_share_id=bef80687-15eb-4094-bfa2-d2e2b4d0710d" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-bed"></i> View Project on Airbnb
+                </a>
+            </div>
+            
+        </section>
+
+        <section class="content-section faq reveal">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">What areas do your logistics services cover?</button>
+                    <div class="faq-answer">
+                        <p>We primarily operate within the Greater Accra Region, including Tema, Accra, and surrounding areas. We also handle nationwide deliveries and international freight forwarding upon request. Please contact us for a custom quote.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">What are the check-in/check-out times for your properties?</button>
+                    <div class="faq-answer">
+                        <p>Standard check-in time is 3:00 PM GMT, and check-out is at 11:00 AM GMT. We offer flexible arrangements, including early check-in or late check-out, subject to availability. Please mention your needs during booking.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Are the properties pet-friendly?</button>
+                    <div class="faq-answer">
+                        <p>Policies on pets vary by property. Please check the specific listing details or contact our support team before booking to confirm if a property can accommodate your furry friends.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">How do I get a quote for a large shipment?</button>
+                    <div class="faq-answer">
+                        <p>For large or specialized shipments, the best way to get an accurate quote is to fill out our contact form below with details about the cargo, origin, and destination. A logistics specialist will get back to you within 24 hours.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="content-section contact-section reveal">
+            <h2 class="section-title">Get In Touch</h2>
+            <form action="https://formspree.io/f/mgvnbrqb" class="contact-form"  
+            method="POST"> 
+                
+                <div class="form-group">
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="subject" name="subject" placeholder="Subject (e.g., Logistics Quote, Booking Inquiry)" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </section>
+
+
+        <section class="cta-section">
+            <h2>Ready for a Seamless Experience?</h2>
+            <p>Let's build a lasting partnership. Contact us today for a personalized quote or book your next stay with confidence.</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Get a Logistics Quote</a>
+                <a href="https://www.airbnb.com/rooms/883253965577895320?guests=1&adults=1&s=67&unique_share_id=bef80687-15eb-4094-bfa2-d2e2b4d0710d" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Book a Stay</a>
+            </div>
+        </section>
+
+    </main>
+    
+    <div id="lightbox-modal" class="lightbox-modal">
+        <span class="lightbox-close" id="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div id="lightbox-caption"></div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <div class="logo">Lady Becca Company Limited </div>
+            <p>Your trusted partner in logistics and hospitality, based in Tema, Ghana.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 ladybecca.com. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <button id="back-to-top" aria-label="Back to Top"><i class="fas fa-arrow-up"></i></button>
+    <div class="theme-switcher" aria-label="Toggle Dark Mode">
+        <div class="slider"></div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <script>
+        // Wait for the document to be fully loaded
+        document.addEventListener('DOMContentLoaded', (event) => {
+            
+            // Get modal elements
+            const modal = document.getElementById('lightbox-modal');
+            const modalImg = document.getElementById('lightbox-img');
+            const captionText = document.getElementById('lightbox-caption');
+            const closeBtn = document.getElementById('lightbox-close');
+
+            // Get all gallery images
+            const galleryImages = document.querySelectorAll('.gallery-item img');
+
+            // Loop through all gallery images and add a click listener
+            galleryImages.forEach(img => {
+                img.addEventListener('click', function() {
+                    modal.style.display = "block";      // Show the modal
+                    modalImg.src = this.src;         // Set the modal image source
+                    captionText.innerHTML = this.alt;  // Set the caption from the image's alt text
+                });
+            });
+
+            // Add click listener to the close button
+            if(closeBtn) {
+                closeBtn.addEventListener('click', function() {
+                    modal.style.display = "none"; // Hide the modal
+                });
+            }
+
+            // Optional: Close modal when clicking outside the image
+            window.addEventListener('click', function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            });
+        });
+    </SCript>
+    </body>
+</html>
+
